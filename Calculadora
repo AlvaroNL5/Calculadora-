@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class CALCULADORA {
+    public static void main(String[]args){
+
+        System.out.println("Introduce un primer numero");
+        int num1 = new Scanner(System.in).nextInt();
+        System.out.println("Introduce un segundo numero");
+        int num2 = new Scanner(System.in).nextInt();
+
+        System.out.println("""
+                             Seleccione una opción:
+                            1.Sumar
+                            2.Restar
+                            3.Multiplicar
+                            4.Dividir
+                            5.Comparar
+                            6.Salir""");
+                     int opcion = new Scanner(System.in).nextInt();
+
+        double resultado = 0;
+        switch (opcion) {
+            case 1:
+                resultado = num1 + num2;
+                System.out.println("Resultado de la suma: " + resultado);
+                break;
+            case 2:
+                resultado = num1 - num2;
+                System.out.println("Resultado de la resta: " + resultado);
+                break;
+            case 3:
+                resultado = num1 * num2;
+                System.out.println("Resultado de la multiplicación: " + resultado);
+                break;
+            case 4:
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                    System.out.println("Resultado de la división: " + resultado);
+                } else {
+                    System.out.println("Error: No se puede dividir entre cero.");
+                }
+                break;
+            case 5:
+                if (num1 == num2) {
+                    System.out.println("Los números son iguales.");
+                } else if (num1 > num2) {
+                    System.out.println("El primer número es mayor que el segundo.");
+                } else {
+                    System.out.println("El primer número es menor que el segundo.");
+                }
+            case 6:
+                break;
+
+        }
+    }
+}
